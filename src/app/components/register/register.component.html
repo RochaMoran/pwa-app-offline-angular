@@ -3,13 +3,8 @@
     <h3 class="text-center">Registrar Elemento</h3>
     <mat-form-field class="example-full-width">
       <mat-label>Nombre elemento</mat-label>
-      <input matInput placeholder="Ex. Pizza" />
+      <input matInput placeholder="Ex. Pizza" (change)="updateName($event)" />
     </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-      <mat-label>Descripcion Elemento</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-    </mat-form-field>
-    <button class="btn w-[100%]" mat-raised-button color="primary">Guardar</button>
+    <button class="btn w-[100%]" mat-raised-button color="primary" (click)="saveData()">Guardar</button>
   </form>
 </div>

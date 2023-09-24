@@ -8,6 +8,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RegisterComponent } from './components/register/register.component';
 import { ListComponent } from './components/list/list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from  '@angular/common/http';
+import { JwtInterceptor } from 'src/helpers/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    RegisterComponent
+    RegisterComponent,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
