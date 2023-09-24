@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from  '@angular/common/http';
 import { JwtInterceptor } from 'src/helpers/jwt.interceptor';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { SetTokenComponent } from './components/set-token/set-token.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     MatSlideToggleModule,
     RegisterComponent,
     HttpClientModule,
+    SetTokenComponent,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
